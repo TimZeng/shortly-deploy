@@ -6,7 +6,7 @@ var linkSchema = db.Schema({
   baseUrl: String,
   code: String,
   title: String,
-  visits: Number,
+  visits: {type: Number, default: 0},
   date: { type: Date, default: Date.now }
 });
 

@@ -5,6 +5,7 @@ iisnode.yml
 npm-debug.log
 
 db/shortly.sqlite
+db/mongodb
 node_modules
 public/dist
 

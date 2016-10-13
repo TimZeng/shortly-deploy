@@ -29,7 +29,7 @@ describe('', function() {
   });
 
   describe('Link creation: ', function() {
-
+    //passed
     it('Only shortens valid urls, returning a 404 - Not found for invalid urls', function(done) {
       request(app)
         .post('/links')
@@ -40,7 +40,7 @@ describe('', function() {
     });
 
     describe('Shortening links:', function() {
-
+      //passed
       it('Responds with the short code', function(done) {
         request(app)
           .post('/links')
@@ -53,7 +53,7 @@ describe('', function() {
           })
           .end(done);
       });
-
+      //passed
       it('New links create a database entry', function(done) {
         request(app)
           .post('/links')
@@ -69,7 +69,7 @@ describe('', function() {
           })
           .end(done);
       });
-
+      //passed
       it('Fetches the link url title', function(done) {
         request(app)
           .post('/links')
