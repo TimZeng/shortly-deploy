@@ -3,14 +3,17 @@ var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
 var userSchema = db.Schema({
-  username: String,
+  username: { type: String, index: { unique: true }},
   password: String,
   date: { type: Date, default: Date.now }
 });
 
 userSchema.methods.comparePassword = function(attemptedPassword, callback) {
   bcrypt.compare(attemptedPassword, this.password, function(err, isMatch) {
-    callback(isMatch);
+    if (err) {
+      callback(err);
+    }
+    callback(null, isMatch);
   });
 };
 
